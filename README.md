@@ -7,7 +7,7 @@
     <img alt="GitHub Repository" src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&color=darkcyan">
   </a>
   <a href="https://github.com/RSlover521/Furnitures-O-Plenty/releases">
-    <img alt="Latest Release" src="https://img.shields.io/github/v/release/RSlover521/Furnitures-O-Plenty?style=for-the-badge&logo=github&color=745E96">
+    <img alt="Latest Release" src="https://img.shields.io/github/v/release/RSlover521/Furnitures-O-Plenty?style=for-the-badge&logo=github&color=lime">
   </a>
   <a href="https://github.com/RSlover521/Furnitures-O-Plenty/blob/main/LICENSE.txt">
     <img alt="License" src="https://img.shields.io/github/license/RSlover521/Furnitures-O-Plenty?style=for-the-badge&logo=github&color=red">
@@ -120,8 +120,9 @@ Furniture variants for all Biomes O' Plenty wood types:
 |-----------|-|
 | FOP 1.0.0 |❌|
 | FOP 1.0.1 |❌|
-| FOP 1.0.2 |✅|
-| FOP 1.0.3 |✅|
+| FOP 1.0.2 |❌|
+| FOP 1.0.3 |❌|
+| FOP 1.1.0 |✅|
 
 **Note: Please review your mod version before you open an issue on the github issue page!**
 
