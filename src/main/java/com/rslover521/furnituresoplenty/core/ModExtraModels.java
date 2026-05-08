@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 @SuppressWarnings("removal")
 public class ModExtraModels {
@@ -76,6 +77,10 @@ public class ModExtraModels {
 
     public static ResourceLocation get(String name) {
         return MODELS.get(name);
+    }
+
+    public static void registerAdditional(Consumer<ResourceLocation> registrar) {
+        MODELS.values().forEach(registrar);
     }
 
     public static void register(IEventBus eventBus) {

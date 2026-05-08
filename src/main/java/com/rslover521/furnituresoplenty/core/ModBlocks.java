@@ -79,6 +79,7 @@ public class ModBlocks {
 			entry(CustomBOPLeafType.CYPRESS, () -> BOPBlocks.CYPRESS_LEAVES),
 			entry(CustomBOPLeafType.SNOWBLOSSOM, () -> BOPBlocks.SNOWBLOSSOM_LEAVES),
 			entry(CustomBOPLeafType.RAINBOW_BIRCH, () -> BOPBlocks.RAINBOW_BIRCH_LEAVES),
+			entry(CustomBOPLeafType.ORIGIN, () -> BOPBlocks.ORIGIN_LEAVES),
 			entry(CustomBOPLeafType.FIR, () -> BOPBlocks.FIR_LEAVES),
 			entry(CustomBOPLeafType.PINE, () -> BOPBlocks.PINE_LEAVES),
 			entry(CustomBOPLeafType.RED_MAPLE, () -> BOPBlocks.RED_MAPLE_LEAVES),
@@ -781,7 +782,8 @@ public class ModBlocks {
                     .mapColor(planks.defaultMapColor())
                     .strength(0.8F)
                     .sound(SoundType.WOOD)
-                    .lightLevel(CeilingFanBlock::light));
+                    .noOcclusion()
+                    .lightLevel(state -> state.getValue(CeilingFanBlock.LIT) ? 15 : 0));
         });
 
         FurnituresOPlenty.LOGGER.info("Successfully registered block and item for "
@@ -986,7 +988,8 @@ public class ModBlocks {
             		.instrument(NoteBlockInstrument.BASS)
             		.strength(2.0F)
             		.sound(SoundType.WOOD)
-            		.ignitedByLava());
+            		.ignitedByLava()
+            		.noOcclusion());
         });
 
         FurnituresOPlenty.LOGGER.info("Successfully registered block and item for "
@@ -1007,6 +1010,7 @@ public class ModBlocks {
             		.strength(2.0F)
             		.sound(SoundType.WOOD)
             		.ignitedByLava()
+            		.noOcclusion()
             		.forceSolidOn());
         });
 
@@ -1085,7 +1089,8 @@ public class ModBlocks {
             		.mapColor(planks.defaultMapColor())
             		.instrument(NoteBlockInstrument.HAT)
             		.strength(1.0F)
-            		.sound(SoundType.GLASS));
+            		.sound(SoundType.GLASS)
+            		.noOcclusion());
         });
 
         FurnituresOPlenty.LOGGER.info("Successfully registered block and item for "
@@ -1124,7 +1129,8 @@ public class ModBlocks {
             return new CustomToiletBlock(woodType, BlockBehaviour.Properties.of()
             		.mapColor(planks.defaultMapColor())
             		.strength(3.5F)
-            		.sound(SoundType.STONE));
+            		.sound(SoundType.STONE)
+            		.noOcclusion());
         });
 
         FurnituresOPlenty.LOGGER.info("Successfully registered block and item for "
