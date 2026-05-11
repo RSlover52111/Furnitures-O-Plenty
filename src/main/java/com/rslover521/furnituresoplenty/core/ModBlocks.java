@@ -418,7 +418,22 @@ public class ModBlocks {
 	public static final RegistryObject<Block> HELLBARK_TOILET;
 	public static final RegistryObject<Block> EMPYREAL_TOILET;
 
-	public static final RegistryObject<Block> 
+	if(ModList.get().isLoaded("backpacked")) {
+		// Register Backpacked shelf block here if the mod is loaded.
+		public static final RegistryObject<Block> FIR_SHELF;
+		public static final RegistryObject<Block> PINE_SHELF;
+		public static final RegistryObject<Block> MAPLE_SHELF;
+		public static final RegistryObject<Block> REDWOOD_SHELF;
+		public static final RegistryObject<Block> MAHOGANY_SHELF;
+		public static final RegistryObject<Block> JACARANDA_SHELF;
+		public static final RegistryObject<Block> PALM_SHELF;
+		public static final RegistryObject<Block> WILLOW_SHELF;
+		public static final RegistryObject<Block> DEAD_SHELF;
+		public static final RegistryObject<Block> MAGIC_SHELF;
+		public static final RegistryObject<Block> UMBRAN_SHELF;
+		public static final RegistryObject<Block> HELLBARK_SHELF;
+		public static final RegistryObject<Block> EMPYREAL_SHELF;
+	}
 
 	static {
 		FIR_BASIN = registerBasin("fir", BOPWoodTypes.FIR);
@@ -724,7 +739,19 @@ public class ModBlocks {
 
 
 		if(ModList.get().isLoaded("backpacked")) {
-			
+			FIR_SHELF = registerShelf("fir", BOPWoodTypes.FIR);
+			PINE_SHELF = registerShelf("pine", BOPWoodTypes.PINE);
+			MAPLE_SHELF = registerShelf("maple", BOPWoodTypes.MAPLE);
+			REDWOOD_SHELF = registerShelf("redwood", BOPWoodTypes.REDWOOD);
+			MAHOGANY_SHELF = registerShelf("mahogany", BOPWoodTypes.MAHOGANY);
+			JACARANDA_SHELF = registerShelf("jacaranda", BOPWoodTypes.JACARANDA);
+			PALM_SHELF = registerShelf("palm", BOPWoodTypes.PALM);
+			WILLOW_SHELF = registerShelf("willow", BOPWoodTypes.WILLOW);
+			DEAD_SHELF = registerShelf("dead", BOPWoodTypes.DEAD);
+			MAGIC_SHELF = registerShelf("magic", BOPWoodTypes.MAGIC);
+			UMBRAN_SHELF = registerShelf("umbran", BOPWoodTypes.UMBRAN);
+			HELLBARK_SHELF = registerShelf("hellbark", BOPWoodTypes.HELLBARK);
+			EMPYREAL_SHELF = registerShelf("empyreal", BOPWoodTypes.EMPYREAL);
 		}
 	}
 
@@ -1139,4 +1166,26 @@ public class ModBlocks {
                 + FurnituresOPlenty.MODID + ":" + name + "_toilet");
         return block;
     }
+
+	private static RegistryObject<Block> registerShelf(String name, WoodType woodType) {
+		RegistryObject<Block> block = BLOCKS.register(name + "_shelf", () -> {
+			Supplier<Block> plankSupplier = BOP_PLANKS_BY_WOOD.get(woodType);
+			if (plankSupplier == null)
+				throw new IllegalArgumentException("Unknown planks for wood type: " + woodType);
+
+			Block planks = plankSupplier.get();
+			return new CustomShelfBlock(woodType, BlockBehaviour.Properties.of()
+					.mapColor(planks.defaultMapColor())
+					.instrument(NoteBlockInstrument.BASS)
+					.strength(2.0F)
+					.sound(SoundType.WOOD)
+					.ignitedByLava()
+					.noOcclusion()
+					.forceSolidOn());
+		});
+
+		FurnituresOPlenty.LOGGER.info("Successfully registered block and item for "
+				+ FurnituresOPlenty.MODID + ":" + name + "_shelf");
+		return block;
+	}
 }
