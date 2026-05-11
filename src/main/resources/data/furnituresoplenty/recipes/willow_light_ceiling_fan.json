@@ -1,7 +1,7 @@
 {
   "type": "refurbished_furniture:workbench_constructing",
   "materials": [
-    { "count": 8, "item": "minecraft:willow_planks" }
+    { "count": 8, "item": "biomesoplenty:willow_planks" }
   ],
   "result": "furnituresoplenty:willow_light_ceiling_fan",
   "show_notification": false

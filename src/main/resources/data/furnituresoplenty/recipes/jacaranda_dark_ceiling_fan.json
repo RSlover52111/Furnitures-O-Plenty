@@ -5,5 +5,5 @@
     { "item": "furnituresoplenty:jacaranda_light_ceiling_fan" },
     { "item": "minecraft:black_dye" }
   ],
-  "result": { "item": "refurbished_furniture:jacaranda_dark_ceiling_fan" }
+  "result": { "item": "furnituresoplenty:jacaranda_dark_ceiling_fan" }
 }

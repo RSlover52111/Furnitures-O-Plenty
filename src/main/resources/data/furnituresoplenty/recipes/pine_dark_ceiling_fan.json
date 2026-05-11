@@ -5,5 +5,5 @@
     { "item": "furnituresoplenty:pine_light_ceiling_fan" },
     { "item": "minecraft:black_dye" }
   ],
-  "result": { "item": "refurbished_furniture:pine_dark_ceiling_fan" }
+  "result": { "item": "furnituresoplenty:pine_dark_ceiling_fan" }
 }
