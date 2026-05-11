@@ -418,6 +418,8 @@ public class ModBlocks {
 	public static final RegistryObject<Block> HELLBARK_TOILET;
 	public static final RegistryObject<Block> EMPYREAL_TOILET;
 
+	public static final RegistryObject<Block> 
+
 	static {
 		FIR_BASIN = registerBasin("fir", BOPWoodTypes.FIR);
 		PINE_BASIN = registerBasin("pine", BOPWoodTypes.PINE);
