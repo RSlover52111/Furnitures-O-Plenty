@@ -165,10 +165,9 @@ dependencies {
     // Refurbished Furniture 1.0.14 (Curse Maven)
     implementation fg.deobf('curse.maven:refurbished-furniture-897116:6623931')
 
-    // Backpacked (optional dependency) - Update file ID if necessary
-    // compileOnly fg.deobf("curse.maven:backpacked-409994:509506")
-    // local fallback
-    // modImplementation fg.deobf(files('libs/refurbished_furniture-forge-1.20.1-1.0.14.jar'))
+    // Backpacked (optional dependency) - use local jar from libs/
+    compileOnly fg.deobf(files('libs/backpacked-forge-1.20.1-2.2.5.jar'))
+    runtimeOnly fg.deobf(files('libs/backpacked-forge-1.20.1-2.2.5.jar'))
 
     // Framework 0.7.15 (Curse Maven)
     implementation fg.deobf('curse.maven:framework-549225:6531428')

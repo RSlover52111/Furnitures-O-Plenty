@@ -34,6 +34,6 @@ issueTrackerURL="https://github.com/RSlover521/Furnitures-O-Plenty/issues"
 [[dependencies.furnituresoplenty]]
     modId="backpacked"
     mandatory=false
-    versionRange="[2.2.6,)"
+    versionRange="[2.2.5,)"
     ordering="AFTER"
     side="BOTH"
